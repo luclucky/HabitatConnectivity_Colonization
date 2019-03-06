@@ -1,22 +1,10 @@
-'''
-created on 2 feb 2017
-
-@author: lucas
-'''
-
-#from randshortpath import randshortpath as rsp
 
 import numpy as np
 np.set_printoptions(suppress=True)
 
-import gdal, ogr, os, osr
 import random
-import scipy 
 
 import psycopg2
-import math
-
-import matplotlib.pyplot as plt
 
 import time
 
@@ -48,19 +36,6 @@ def spatialSTRESS_RAST(raster_MD, SL, numEVENTS, rAdius):
         grid = np.nansum([grid_INTER, grid],axis=0)
     
     return grid
-
-# spaSTRESS_gRID = spatialSTRESS_RAST(raster_MD, SL = stresslevel_ch, numEVENTS = 5, rAdius = 25)
-#         
-# masked_array = np.ma.masked_where(spaSTRESS_gRID == 0, spaSTRESS_gRID)
-#  
-# cmap = plt.cm.spring
-# cmap.set_bad(color='white')
-#  
-# plt.imshow(masked_array, cmap="cool")
-# plt.colorbar()
-# plt.show()
-#  
-# plt.clf()
 
 def PROBreachCONHABITAT(Co, maxCo):
     
@@ -122,9 +97,7 @@ def randomEXT(extPROB_perRUN, occhabitats):
         currPROB_adj = np.random.choice([np.ceil(currPROB).astype(int), np.floor(currPROB).astype(int)], 1, p = [currPROB % 1, 1 - currPROB % 1])
 
         extLIST = np.random.choice(occhabitats[0][np.where(occhabitats[3] > 0.0)].astype(int), currPROB_adj)
-        
-#         occhabitats[1][extLIST-1] = -111
-#         occhabitats[2][extLIST-1] = -111
+
         occhabitats[3][extLIST-1] = 0
         occhabitats[4][extLIST-1] = -111
 
@@ -133,17 +106,6 @@ def randomEXT(extPROB_perRUN, occhabitats):
 # MODEL PARAMETERS
 
 timesteps = 100
-
-# stresslevel = [0.025, 0.05, 0.075, 0.1] # intensity of stress events
-
-# stresslevel = (np.random.choice(50, 3)/100.0).tolist()
-
-# percstress_events = 0.0 # percentage of stress occurrences per timesteps
-
-# stress_events = np.random.choice(timesteps, int(percstress_events*timesteps)) # random selection depending on percstress_events
-
-# area_event = habitats_extent # area where stress occurs - in this case: total area 
-
 maxCo = 1250
 
 growthfunc = 'logGRO'    
@@ -181,12 +143,7 @@ def dispersal_MODEL(inPARA):
     for inHAB in inHABs:
             
         for z in range(10):
-             
-            cursor.execute("""SELECT st_extent(geom) FROM dis_pts_2500_10x10_"""+str(inPARA[1][-9:])+"""."""+str(inHAB)+"""_start_"""+str(z)+""";""")
-            habitats_extent = cursor.fetchone()
-            habitats_extent = re.findall(r"[\w.]+", habitats_extent[0])[1:]
-            habitats_extent = [float(i) for i in habitats_extent]
-            
+
             cursor.execute("""SELECT idS, st_astext(geom) FROM dis_pts_2500_10x10_"""+str(inPARA[1][-9:])+"""."""+str(inHAB)+"""_start_"""+str(z)+""";""")
             xy_pts = cursor.fetchall()
             xy_pts = [[i[0],re.findall(r"[\w']+",i[1])[1:]] for i in xy_pts]
@@ -197,10 +154,6 @@ def dispersal_MODEL(inPARA):
             list_SH = cursor.fetchall()
             list_SH = np.array(list_SH).T
 
-#             cursor.execute("""SELECT rid, ST_MetaData(rast) AS md FROM stream_network_10x10.rlp_stream_rast_testarea_"""+str(inHAB[-5:])+""";""")
-#             raster_MD = cursor.fetchall()
-#             raster_MD = [float(x) for x in raster_MD[0][1][1:-1].split(',')]
-                
             for zz in range(10):
                 
                 start = time.time()
@@ -209,16 +162,8 @@ def dispersal_MODEL(inPARA):
                 habitats_shortpath_red = cursor.fetchall()
                 habitats_shortpath_red = [i for i in habitats_shortpath_red if i[2] <= maxCo]
                 habitats_shortpath_red = np.array(habitats_shortpath_red, dtype = object).T
-                
-                # habitats_qual = np.random.random_sample((len(xy_pts),))  # creates ramdom HQs
-                # habitats_qual = np.load('/home/lucas/PhD/STRESSOR/TEST_DATA/habitatsQuality.npy')
-                # habitats_qual[np.where(habitats_qual < 0.25)] = 0.25 # min HQ set to 0.25
-                
-                # habitats_qual = np.random.uniform(0.25, 1.0, len(xy_pts)) # uniform distribution of HQs 
-                
+
                 habitats_qual = np.array(len(xy_pts) * [0.625])
-                
-#                 cursor.execute("""DROP TABLE IF EXISTS """+str(inPARA[2])+"""."""+str(inPARA[0])+"""_50x50_"""+str(zz)+"""_"""+str(inHAB[16:])+"""_start_"""+str(z)+""";""")
 
                 if str(inPARA[0])+"""_50x50_"""+str(zz)+"""_"""+str(inHAB[16:])+"""_start_"""+str(z) in procTABs:
                     continue
@@ -244,9 +189,7 @@ def dispersal_MODEL(inPARA):
                     print(str(inPARA[1])+""": """+str(inPARA[0])+"""_50x50_"""+str(zz)+"""_"""+str(inHAB[16:])+"""_start_"""+str(z)+ ': run ' + str(xxxx))
                         
                     cursor.execute("""ALTER TABLE """+str(inPARA[2])+"""."""+str(inPARA[0])+"""_50x50_"""+str(zz)+"""_"""+str(inHAB[16:])+"""_start_"""+str(z)+""" ADD firstcol_"""+str(xxxx+1)+"""_timestep bigint, ADD origin_"""+str(xxxx+1)+"""_timestep bigint, ADD biomass_"""+str(xxxx+1)+"""_timestep float, ADD first20_"""+str(xxxx+1)+"""_timestep bigint;""")
-                        
-#                     starthabitats = np.random.choice(np.unique([habitats_shortpath_red[0], habitats_shortpath_red[1]]), int(len(xy_pts)*0.1+0.5)).astype(int) # number of occupied habitats first run
-                    
+
                     starthabitats = list_SH[xxxx]
                     
                     starthabitats_hq = habitats_qual[starthabitats-1]
@@ -265,11 +208,8 @@ def dispersal_MODEL(inPARA):
                         if len(occhabitats[0][np.where(occhabitats[3] > 0.0)].astype(int)) == 0:
                             break
                         
-                #         randomEXT(extPROB_perRUN, occhabitats)
-                        
                         starthabitats = occhabitats[0][np.where(occhabitats[3] > 0.0)].astype(int)
-                
-                #         igr_rand = igr + igr*random.uniform(-0.25, 0.25) 
+
                         igr_rand = igr 
                 
                         starthabitats_hq = habitats_qual[starthabitats-1] # habitat-quality of starthabitats
@@ -296,32 +236,7 @@ def dispersal_MODEL(inPARA):
                             starthabitats_indnr[np.where(starthabitats_indnr <= TH)] = THETAlogGRO_T(T = TH, N = starthabitats_indnr[np.where(starthabitats_indnr <= TH)], r = igr_rand, t = 1)
                             
                         occhabitats[3][starthabitats-1] = np.round(starthabitats_indnr.astype(float), 3)
-                
-#                         if x in stress_events:
-#                             
-#                             extprob = [i[0]  for i in xy_pts if i[1] >= area_event[0] and i[1] <= area_event[2] and i[2] >= area_event[1] and i[2] <= area_event[3]]
-#                 
-#                             stresslevel_ch = np.random.choice(stresslevel) 
-#                 
-#                             spaSTRESS_gRID = spatialSTRESS_RAST(raster_MD, SL = stresslevel_ch, numEVENTS = 5, rAdius = 25)
-#                 
-#                             for xxxxx in range(len(extprob)):
-#                     
-#                                 if extprob[xxxxx] in starthabitats:
-#                                                     
-#                                     ind = np.where(starthabitats == extprob[xxxxx])[0].tolist()  
-#                                     
-#                                     SLpPT = spaSTRESS_gRID[int((raster_MD[1]-xy_pts[0][2])/100)][int((xy_pts[0][1]-raster_MD[0])/100)]
-#                  
-#                                     stress = simSTRESS_VALUE(starthabitats_hq[ind][0], SLpPT)
-#                                      
-#                                     occhabitats[3][(extprob[xxxxx]-1)] = occhabitats[3][(extprob[xxxxx]-1)]-occhabitats[3][(extprob[xxxxx]-1)]*stress
-#                  
-#                                     if occhabitats[3][(extprob[xxxxx]-1)] == 0:
-#                                         
-#                                         occhabitats[1][(extprob[xxxxx]-1)] = -111
-#                                         occhabitats[2][(extprob[xxxxx]-1)] = -111
-                
+
                         starthabitats = starthabitats[np.where(occhabitats[3][starthabitats-1] >= 20)] # starthabitats with less than 20 individuals are remove from starthabitats 
                 
                         for xx in range(len(starthabitats)):
@@ -369,11 +284,7 @@ def dispersal_MODEL(inPARA):
                                 disind_perc = disind * disind_part[0]
                                 
                                 disind_part = disind_part[1:]
-                                
-                #                 yn = np.random.choice([1, 0], 1, p=[prob[xxx], 1-prob[xxx]])[0]
-                            
-                #                 if yn == 1:
-                
+
                                 disind_perc = disind_perc * prob[xxx]
                                      
                                 if disind_perc == 0.0:
@@ -432,8 +343,7 @@ def dispersal_MODEL(inPARA):
                 
                 end = time.time()
                 print((end - start) / 60)
-        
-        # close communication with the database
+
     cursor.close()
     conn.close()
 
@@ -464,8 +374,3 @@ def main():
 if __name__ in ['__builtin__', '__main__']:
     
     main()
-
-
-
-
-

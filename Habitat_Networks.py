@@ -58,12 +58,8 @@ def costRASTER_shortPATHs(inSCHEMA):
                     
                 y = doub[0][x]
                     
-                #print('x: ' + str(x))
-                    
                 for xx in range(len(doub[0])):
-                        
-                    #print('xx: ' + str(xx))
-            
+
                     yy = doub[1][xx]
                 
                     if yy == y:
@@ -136,8 +132,6 @@ def costRASTER_shortPATHs(inSCHEMA):
         ###
         
             for xx in range(numNLMs):
-            
-                print(xx)
                                                             
                 cursor.execute("""SELECT ST_AsGDALRaster(rast, 'GTiff') FROM """+str(inSCHEMA[:-10])+"""_random_01.nlmrc_testarea_50x50_"""+str(xx)+"""_"""+str(z)+""";""")
                 
@@ -196,9 +190,7 @@ def costRASTER_shortPATHs(inSCHEMA):
         #####
         
             for xx in range(numNLMs):
-            
-                print(xx)
-                                                            
+
                 cursor.execute("""SELECT ST_AsGDALRaster(rast, 'GTiff') FROM """+str(inSCHEMA[:-10])+"""_random_01.nlmre_testarea_50x50_"""+str(xx)+"""_"""+str(z)+""";""")
                 
                 vsipath = '/vsimem/from_postgis'
