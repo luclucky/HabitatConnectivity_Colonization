@@ -16,13 +16,11 @@ def costRASTER_shortPATHs(inSCHEMA):
     def ind_to_Xcoord(ind_x):
         
         coord_x = ind_x * cr_gt[1] + cr_gt[0] + cr_gt[1]/2
-    
         return(coord_x)
         
     def ind_to_Ycoord(ind_y):
         
         coord_y = ind_y * cr_gt[5] + cr_gt[3] + cr_gt[5]/2
-    
         return(coord_y)
         
     conn = psycopg2.connect("host=??? port=??? dbname=??? user=??? password=???")
