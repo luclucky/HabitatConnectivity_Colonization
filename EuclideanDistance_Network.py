@@ -1,25 +1,12 @@
 
 import numpy as np
-import sys, gdal, ogr, os, osr
-import random
         
 import psycopg2
-import math
-import subprocess 
-
-import matplotlib.pyplot as plt
-
-import time
-import nlmpy
-import re
-
-import bokeh
-from bokeh.plotting import figure, show, output_file
 
 import warnings
 warnings.filterwarnings("ignore", category=np.VisibleDeprecationWarning) 
 
-conn = psycopg2.connect("host=localhost port=5432 dbname=DB_PhD user=lucas password=1gis!gis1")
+conn = psycopg2.connect("host=??? port=??? dbname=??? user=??? password=???")
 cursor = conn.cursor()
 
 cursor.execute("""SELECT ids FROM stream_network.pts_habitat""")

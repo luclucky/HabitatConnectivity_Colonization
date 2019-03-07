@@ -97,6 +97,11 @@ for patcSHAR in patcSHARs:
 
     SHR = str(patcSHAR).replace('.', '')
 
+    cursor.execute("""CREATE SCHEMA IF NOT EXISTS dis_pts_2500_10x10_random_"""+str(SHR)+""";""")
+    cursor.execute("""CREATE SCHEMA IF NOT EXISTS dis_pts_2500_10x10_clustr_"""+str(SHR)+""";""")
+    cursor.execute("""CREATE SCHEMA IF NOT EXISTS dis_pts_2500_10x10_linear_"""+str(SHR)+""";""")
+    conn.commit()
+
     for xx in ids:
 
         cursor.execute("""CREATE TABLE dis_pts_2500_10x10_random_"""+str(SHR)+""".pts_habitat_red_"""+str(xx)+""" AS SELECT * FROM dis_pts_2500_10x10_random_01.pts_habitat_red_"""+str(xx)+""";""")
