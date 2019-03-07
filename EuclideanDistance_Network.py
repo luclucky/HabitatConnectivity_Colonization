@@ -22,7 +22,9 @@ for x in ids:
     
     conn.commit()
 
-conn = psycopg2.connect("host=localhost port=5432 dbname=DB_PhD user=lucas password=1gis!gis1")
+#####
+
+conn = psycopg2.connect("host=??? port=??? dbname=??? user=??? password=???")
 cursor = conn.cursor()
 
 cursor.execute("""SELECT ids FROM stream_network.rast_10x10""")
@@ -32,7 +34,9 @@ ids = [i[0] for i in ids]
 
 for x in ids:
 
-    cursor.execute("""CREATE TABLE stream_network_10x10.dist_pts_2500_50x50_""" + str(x) + """ AS SELECT * FROM stream_network.dist_pts_2500_50x50 WHERE ST_Contains((SELECT geom FROM stream_network.rast_10x10 WHERE ids = """ + str(x) + """), geom);""")
+    cursor.execute("""CREATE TABLE stream_network_10x10.pts_habitat_red_50x50_"""+str(x)+""" AS SELECT * FROM stream_network.pts_habitat_red_50x50 WHERE geom && (SELECT ST_Extent(geom) FROM stream_network.rast_10x10 WHERE ids = """+str(x)+""");""")
+
+    cursor.execute("""CREATE TABLE stream_network_10x10.dist_pts_2500_50x50_"""+str(x)+ """ AS SELECT * FROM stream_network.dist_pts_2500_50x50 WHERE ST_Contains((SELECT geom FROM stream_network.rast_10x10 WHERE ids = """+str(x)+"""), geom);""")
 
     conn.commit()
 

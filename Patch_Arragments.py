@@ -341,4 +341,3 @@ for patcSHAR in patcSHARs:
 
 cursor.close()
 conn.close()
-

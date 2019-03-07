@@ -87,10 +87,7 @@ def costRASTER_shortPATHs(inSCHEMA):
                 
                 cr_band = cost_raster.GetRasterBand(1)
                 cr_array = cost_raster.ReadAsArray()
-                
-                numrows = len(cr_array)
-                numcols = len(cr_array[0])
-                
+
                 cr_gt = cost_raster.GetGeoTransform()
                 
                 cost_raster.RasterXSize
@@ -145,10 +142,7 @@ def costRASTER_shortPATHs(inSCHEMA):
                 
                 cr_band = cost_raster.GetRasterBand(1)
                 cr_array = cost_raster.ReadAsArray()
-                
-                numrows = len(cr_array)
-                numcols = len(cr_array[0])
-                
+
                 cr_gt = cost_raster.GetGeoTransform()
                 
                 cost_raster.RasterXSize
