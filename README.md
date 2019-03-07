@@ -29,7 +29,7 @@ Python 2.7.12
 
 ### PYTHON LIBRARIES
 
-gdal 2.2.1
+gdal 2.2.1\
 multiprocessing 0.70a1
 nlmpy 0.1.5
 numpy 1.11.0
