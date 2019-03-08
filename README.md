@@ -37,12 +37,14 @@ os\
 psycopg2 2.7.6.1\
 random\
 re 2.2.1\
-scikit-image 0.10.1 see **http://scikit-image.org/docs/dev/api/skimage.graph.html**\
+scikit-image 0.10.1 see http://scikit-image.org/docs/dev/api/skimage.graph.html \
 subprocess
 
 ## B. INPUT-DATA
 
 ## C. PYTHON CODE
+
+**psycopg2.connect("host=??? port=??? dbname=??? user=??? password=???")** see http://initd.org/psycopg/docs/module.html
 
 Please run the scripts in the following order:
 
