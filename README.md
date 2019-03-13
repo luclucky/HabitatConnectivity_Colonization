@@ -62,13 +62,13 @@ Please run the scripts corresponding their numerical order.
 
 For suggestions or requests for further information contact the corresponding author Lucas Streib:\
 
-Phone:  +49 6341 280-32317\
-Mail:   streib@uni-landau.de\
+Phone:  +49 6341 280-32317/
+Mail:   streib@uni-landau.de
 
-Institute for Enviornmental Sciences\ 
-Quantitative Landscape Ecology\
-University of Koblenz-Landau, Campus Landau\
-Fortstraße 7\
-76829 Landau / Pfalz\
+Institute for Enviornmental Sciences/
+Quantitative Landscape Ecology/
+University of Koblenz-Landau, Campus Landau/
+Fortstraße 7/
+76829 Landau/
 Germany
 
