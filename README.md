@@ -62,6 +62,8 @@ Please run the scripts corresponding their numerical order.
 
 For suggestions or requests for further information contact the corresponding author Lucas Streib:\
 
+&copy;
+
 &#9993:   streib@uni-landau.de
 Phone:  +49 6341 280-32317\
 
