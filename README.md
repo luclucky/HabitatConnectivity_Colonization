@@ -64,7 +64,7 @@ For suggestions or requests for further information contact the corresponding au
 
 &copy;
 
-&#9993:   streib@uni-landau.de
+&#9993;:   streib@uni-landau.de
 Phone:  +49 6341 280-32317\
 
 Institute for Enviornmental Sciences\
