@@ -42,19 +42,15 @@ habitat_patches.shp
 
 **psycopg2.connect("host=??? port=??? dbname=??? user=??? password=???")** see http://initd.org/psycopg/docs/module.html
 
-##### 1. Landscape_Scenarios.py
+*** 1. Landscape_Scenarios.py ***
 
+*** 2. EuclideanDistance_Networks.py ***
 
-##### 2. EuclideanDistance_Networks.py
+*** 3. Patch_Arragments.py ***
 
+*** 4. Habitat_Networks.py ***
 
-##### 3. Patch_Arragments.py
-
-
-##### 4. Habitat_Networks.py
-
-
-##### 5. Simulation.py
+*** 5. Simulation.py ***
 
 
 Please run the scripts corresponding their numerical order.
