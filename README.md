@@ -16,9 +16,8 @@ The **SOFTWARE-FRAMEWORK** for the presented meta-population model consists of:
 - PostGIS 2.3.3
 - Python 2.7.12
 
-All results produced by the **PYTHON CODE** (see C.) will be stored in a PostgreSQL database extended by PostGIS. The simulation 
-
-Following **PYTHON LIBRARIES** are required: 
+All results produced by the **PYTHON CODE** (see C.) will be stored in a PostgreSQL database extended by PostGIS. The set-up of landscape scenarios, habitat networks and the simulation is implemented in **PYTHON** using the PostgreSQL database adapter **Psycopg**.\
+To run the **PYTHON CODE**, beside **PostGIS** following **PYTHON LIBRARIES** are required: 
 
 - gdal 2.2.1
 - multiprocessing 0.70a1
@@ -28,17 +27,29 @@ Following **PYTHON LIBRARIES** are required:
 - psycopg2 2.7.6.1
 - random
 - re 2.2.1
-- scikit-image 0.10.1 see http://scikit-image.org/docs/dev/api/skimage.graph.html 
+- scikit-image 0.10.1 (see http://scikit-image.org/docs/dev/api/skimage.graph.html) 
 - subprocess
 
 ### B. INPUT-DATA
 
-geoDATA_gitHUB
+The three geo-datasets stored in the repository folder [geoDATA_gitHUB](https://github.com/luclucky/HabitatConnectivity_Colonization/tree/master/geoDATA_gitHUB):
 
+- stream_net.tif
+- tiles_10x10km.shp
+- habitat_patches.shp
+
+**geoDATA_gitHUB** 
+
+Therefore a schema named **stream_network** has to be created in the database and the geo-datasets have to be imported. For the import see **PostGIS 2.4.8dev Manual** - 4.4.Loading GIS (Vector) Data & 5.1 Loading and Creating Rasters (https://postgis.net/stuff/postgis-2.4.pdf)
+
+
+stream_net.tif
 tiles_10x10km.shp
 habitat_patches.shp
 
 ### C. PYTHON CODE
+
+**???**
 
 **psycopg2.connect("host=??? port=??? dbname=??? user=??? password=???")** see http://initd.org/psycopg/docs/module.html
 
@@ -52,14 +63,14 @@ habitat_patches.shp
 
 **5. Simulation.py**
 
-------
-
 Please run the scripts corresponding their numerical order.
 
-For suggestions or requests for further information please contact the corresponding author Lucas Streib:\
+------
 
-Phone:  +49 6341 280-32317
-Mail:   streib@uni-landau.de
+For suggestions or requests for further information contact the corresponding author Lucas Streib:\
+
+Phone:  +49 6341 280-32317\
+Mail:   streib@uni-landau.de\
 
 Institute for Enviornmental Sciences\ 
 Quantitative Landscape Ecology\
