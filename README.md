@@ -10,43 +10,37 @@ Lucas Streib¹, Henriette Heer¹, Mira Kattwinkel¹, Stefan Ruzika², Ralf B. Sc
 
 ## A. FRAMEWORK
 
-### Hardware
+The **SOFTWARE-FRAMEWORK** for the presented meta-population model consists of: 
 
-System memory: 31.4 GiB\
-Processor: Intel® Xeon(R) CPU E5-2680 v3 @ 2.50GHz x 16
+- PostgreSQL 9.6.10\
+- PostGIS 2.3.3\
+- Python 2.7.12
 
-### OPERATING SYSTEM
+All results produced will be stored in a PostgreSQL database extended by PostGIS.
 
-Ubuntu Version 18.04.1 LTS (Bionic Beaver) 64-bit\
-Kernel Linux 4.15.0-45-generic x86_64\
-MATE 1.20.1
+Following **PYTHON LIBRARIES** are required: 
 
-### SOFTWARE
-
-PostgreSQL 9.6.10\
-PostGIS 2.3.3\
-Python 2.7.12
-
-### PYTHON LIBRARIES
-
-gdal 2.2.1\
-multiprocessing 0.70a1\
-nlmpy 0.1.5\
-numpy 1.11.0\
-os\
-psycopg2 2.7.6.1\
-random\
-re 2.2.1\
-scikit-image 0.10.1 see http://scikit-image.org/docs/dev/api/skimage.graph.html \
-subprocess
+- gdal 2.2.1\
+- multiprocessing 0.70a1\
+- nlmpy 0.1.5\
+- numpy 1.11.0\
+- os\
+- psycopg2 2.7.6.1\
+- random\
+- re 2.2.1\
+- scikit-image 0.10.1 see http://scikit-image.org/docs/dev/api/skimage.graph.html \
+- subprocess
 
 ## B. INPUT-DATA
+
+geoDATA_gitHUB
+
+tiles_10x10km.shp
+habitat_patches.shp
 
 ## C. PYTHON CODE
 
 **psycopg2.connect("host=??? port=??? dbname=??? user=??? password=???")** see http://initd.org/psycopg/docs/module.html
-
-Please run the scripts in the following order:
 
 #### 1. Landscape_Scenarios.py
 
@@ -63,4 +57,4 @@ Please run the scripts in the following order:
 #### 5. Simulation.py
 
 
-
+Please run the scripts corresponding their numerical order.
