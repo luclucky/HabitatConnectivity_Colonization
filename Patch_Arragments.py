@@ -11,8 +11,6 @@ import warnings
 warnings.filterwarnings("ignore", category=np.VisibleDeprecationWarning) 
 
 conn = psycopg2.connect("host=??? port=??? dbname=??? user=??? password=???")
-
-conn = psycopg2.connect("host=139.14.20.252 port=5432 dbname=DB_PhD user=streib_lucas password=1gis!gis1")
 cursor = conn.cursor()
 
 def randomSAMPLE(randHAPTS_IDS, maxHABs):

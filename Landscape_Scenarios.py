@@ -16,7 +16,7 @@ import warnings
 
 warnings.filterwarnings("ignore", category=np.VisibleDeprecationWarning)
 
-conn = psycopg2.connect("host=localhost port=??? dbname=??? user=??? password=???")
+conn = psycopg2.connect("host=??? port=??? dbname=??? user=??? password=???")
 cursor = conn.cursor()
 
 cursor.execute("""SELECT ST_MetaData(rast) As md FROM stream_network.rlp_stream_rast_testarea_50x50;""")
@@ -246,7 +246,7 @@ for x in range(share_LT):
 
         print raster_array
 
-        conn = psycopg2.connect("host=localhost port=5432 dbname=??? user=??? password=???")
+        conn = psycopg2.connect("host=??? port=??? dbname=??? user=??? password=???")
         cursor = conn.cursor()
 
         os.environ['PGPASSWORD'] = '???'
