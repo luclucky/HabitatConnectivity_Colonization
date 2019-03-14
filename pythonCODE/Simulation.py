@@ -120,7 +120,7 @@ def dispersal_MODEL(inPARA):
                     
                     print(str(inPARA[1])+""": """+str(inPARA[0])+"""_50x50_"""+str(xxx)+"""_"""+str(inHAB[16:])+"""_start_"""+str(xx)+ ': run ' + str(xxxx))
                         
-                    cursor.execute("""ALTER TABLE """+str(inPARA[2])+"""."""+str(inPARA[0])+"""_50x50_"""+str(xxx)+"""_"""+str(inHAB[16:])+"""_start_"""+str(xx)+""" ADD firstcol_"""+str(xxxx+1)+"""_timestep bigint, ADD origin_"""+str(xxxx+1)+"""_timestep bigint, ADD biomass_"""+str(xxxx+1)+"""_timestep float, ADD first20_"""+str(xxxx+1)+"""_timestep bigint;""")
+                    cursor.execute("""ALTER TABLE """+str(inPARA[2])+"""."""+str(inPARA[0])+"""_50x50_"""+str(xxx)+"""_"""+str(inHAB[16:])+"""_start_"""+str(xx)+""" ADD firstcol_"""+str(xxxx+1)+""" bigint, ADD origin_"""+str(xxxx+1)+""" bigint, ADD biomass_"""+str(xxxx+1)+""" float, ADD first20_"""+str(xxxx+1)+""" bigint;""")
 
                     starthabitats = list_SH[xxxx]
                     
@@ -247,7 +247,7 @@ def dispersal_MODEL(inPARA):
                           
                     toINS_DB = str(np.array(occhabitats).T.tolist())[1:-1].replace('[','(').replace(']',')')
 
-                    cursor.execute("""UPDATE """+str(inPARA[2])+"""."""+str(inPARA[0])+"""_50x50_"""+str(xxx)+"""_"""+str(inHAB[16:])+"""_start_"""+str(xx)+""" SET firstcol_"""+str(xxxx+1)+"""_timestep = firstcol_"""+str(xxxx+1)+"""_timestep_arr, origin_"""+str(xxxx+1)+"""_timestep = origin_"""+str(xxxx+1)+"""_timestep_arr, biomass_"""+str(xxxx+1)+"""_timestep = biomass_"""+str(xxxx+1)+"""_timestep_arr, first20_"""+str(xxxx+1)+"""_timestep = first20_"""+str(xxxx+1)+"""_timestep_arr from (values """+toINS_DB+""") as c(pts_id_arr, firstcol_"""+str(xxxx+1)+"""_timestep_arr, origin_"""+str(xxxx+1)+"""_timestep_arr, biomass_"""+str(xxxx+1)+"""_timestep_arr, first20_"""+str(xxxx+1)+"""_timestep_arr) WHERE pts_id = pts_id_arr;""")
+                    cursor.execute("""UPDATE """+str(inPARA[2])+"""."""+str(inPARA[0])+"""_50x50_"""+str(xxx)+"""_"""+str(inHAB[16:])+"""_start_"""+str(xx)+""" SET firstcol_"""+str(xxxx+1)+""" = firstcol_"""+str(xxxx+1)+"""_arr, origin_"""+str(xxxx+1)+"""xxxxxxx = origin_"""+str(xxxx+1)+"""_arr, biomass_"""+str(xxxx+1)+""" = biomass_"""+str(xxxx+1)+"""_arr, first20_"""+str(xxxx+1)+""" = first20_"""+str(xxxx+1)+"""_arr from (values """+toINS_DB+""") as c(pts_id_arr, firstcol_"""+str(xxxx+1)+"""_arr, origin_"""+str(xxxx+1)+"""_arr, biomass_"""+str(xxxx+1)+"""_arr, first20_"""+str(xxxx+1)+"""_arr) WHERE pts_id = pts_id_arr;""")
                 
                 conn.commit()
 
