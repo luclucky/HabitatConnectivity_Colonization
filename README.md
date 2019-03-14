@@ -17,7 +17,7 @@ The **SOFTWARE-FRAMEWORK** for the presented meta-population model consists of:
 - [Python 2.7.12](https://www.python.org/downloads/release/python-2712/)
 
 All results produced by the **PYTHON CODE** (see C.) will be stored in a [PostgreSQL](https://www.postgresql.org/) database extended by [PostGIS](https://postgis.net/). The set-up of landscape scenarios, habitat networks and the simulation is implemented in **PYTHON** using the PostgreSQL database adapter [Psycopg](http://initd.org/psycopg/docs/index.html).\
-To run the code, beside PostGIS following **PYTHON LIBRARIES** are required: 
+To run the code, beside PostGIS following **PYTHON LIBRARIES** are further required: 
 
 - [gdal 2.2.1](https://pypi.org/project/pygdal/)
 - [multiprocessing 0.70a1](https://pypi.org/project/multiprocess/)
@@ -32,13 +32,16 @@ To run the code, beside PostGIS following **PYTHON LIBRARIES** are required:
 
 ### B. INPUT-DATA
 
-The three geo-datasets stored in the repository folder [geoDATA_gitHUB](https://github.com/luclucky/HabitatConnectivity_Colonization/tree/master/geoDATA_gitHUB):
+Following three geo-datasets are required as **INPUT-DATA**:
 
-- stream_net.tif
-- tiles_10x10km.shp
-- habitat_patches.shp
+ - **stream_net.tif**: 
+   blb
+ - **tiles_10x10km.shp**:
+   
+ - **habitat_patches.shp**:
+   
 
-have to be imported in a database-schema named **stream_network** which has to be created in advance. For the import see [PostGIS 2.4.8dev Manual](https://postgis.net/stuff/postgis-2.4.pdf) - 4.4.Loading GIS (Vector) Data & 5.1 Loading and Creating Rasters. 
+The datasets are stored in the repository folder [geoDATA_gitHUB](https://github.com/luclucky/HabitatConnectivity_Colonization/tree/master/geoDATA_gitHUB) and have to be imported in a database-schema named **stream_network**. The schema has to be created and named accordingly in advance. For the import see e.g. [PostGIS 2.4.8dev Manual](https://postgis.net/stuff/postgis-2.4.pdf) - 4.4.Loading GIS (Vector) Data & 5.1 Loading and Creating Rasters. 
 
 ### C. PYTHON CODE
 
@@ -60,9 +63,9 @@ Please run the scripts corresponding their numerical order.
 
 ------
 
-For suggestions or requests for further information contact the corresponding author Lucas Streib:\
+For suggestions or requests for further information please contact the corresponding author Lucas Streib:\
 
-&#9993; streib@uni-landau.de
+&#9993; streib@uni-landau.de\
 &#9990; +49 6341 280-32317\
 
 Institute for Enviornmental Sciences\
