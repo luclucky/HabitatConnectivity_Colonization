@@ -1,5 +1,5 @@
 
-## FRAMEWORK, INPUT-DATA & PYTHON CODE 
+## FRAMEWORK, INPUT-DATA & PYTHON CODE FOR THE PUBLICATION:
 
 # HOW DOES HABITAT CONNECTIVITY INFLUENCE THE COLONIZATION SUCCESS OF AN AQUATIC HEMIMETABOLOUS INSECT? - A MODELLING APPROACH
 
@@ -41,25 +41,20 @@ Following three geo-datasets are required as **INPUT-DATA**:
  - **tiles_10x10km.shp**:\
    Polygon-Shapefile dataset representing 25 coextensive squares covering the raster dataset. 
 
-The datasets are stored in the repository folder [geoDATA_gitHUB](https://github.com/luclucky/HabitatConnectivity_Colonization/tree/master/geoDATA_gitHUB) and have to be imported in a database-schema named **stream_network**. The schema has to be created and named accordingly in advance. For the import see e.g. [PostGIS 2.4.8dev Manual](https://postgis.net/stuff/postgis-2.4.pdf) - 4.4.Loading GIS (Vector) Data & 5.1 Loading and Creating Rasters. 
+The datasets are stored in the repository folder [geoDATA_gitHUB](https://github.com/luclucky/HabitatConnectivity_Colonization/tree/master/geoDATA_gitHUB) and have to be imported into a schema named **stream_network**; the schema has to be created and named accordingly in advance. For the import into the database see e.g. [PostGIS 2.4.8dev Manual](https://postgis.net/stuff/postgis-2.4.pdf) - 4.4.Loading GIS (Vector) Data & 5.1 Loading and Creating Rasters. 
 
 ### C. PYTHON CODE
 
-**???**
+For database access from Python first the conncetion parameters have to be specified in each of the following scripts. Therefore, the **???**-symbol has to be replaced in the command **psycopg2.connect("host=??? port=??? dbname=??? user=??? password=???")** - see [psycopg manual](http://initd.org/psycopg/docs/module.html).\
+Implementation details 
 
-**psycopg2.connect("host=??? port=??? dbname=??? user=??? password=???")** see http://initd.org/psycopg/docs/module.html
+Please run the scripts corresponding their numerical order:
 
-**1. Landscape_Scenarios.py**
-
-**2. EuclideanDistance_Networks.py**
-
-**3. Patch_Arragments.py**
-
-**4. Habitat_Networks.py**
-
-**5. Simulation.py**
-
-Please run the scripts corresponding their numerical order.
+- **1. Landscape_Scenarios.py**
+- **2. EuclideanDistance_Networks.py**
+- **3. Patch_Arragments.py**
+- **4. Habitat_Networks.py**
+- **5. Simulation.py**
 
 ------
 
