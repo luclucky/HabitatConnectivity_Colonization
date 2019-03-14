@@ -19,6 +19,8 @@ warnings.filterwarnings("ignore", category=np.VisibleDeprecationWarning)
 conn = psycopg2.connect("host=??? port=??? dbname=??? user=??? password=???")
 cursor = conn.cursor()
 
+#
+
 cursor.execute("""SELECT ST_MetaData(rast) As md FROM stream_network.rlp_stream_rast_testarea_50x50;""")
 raster_MD = cursor.fetchall()
 raster_MD = [float(xx) for xx in raster_MD[0][0][1:-1].split(',')]
@@ -58,12 +60,9 @@ conn.close()
 
 numNLMs = 10
 
-share_LT = [[[1], 25], [[.75, .125, .125], 25], [[.5, .25, .25], 25], [[.25, .375, .375], 25], [[.5, .5], 50],
-            [[1], 50], [[.125, .75, .125], 25], [[.25, .5, .25], 25], [[.375, .25, .375], 25], [[.5, 0, .5], 25],
-            [[1], 75], [[.125, .125, .75], 25], [[.25, .25, .5], 25], [[.375, .375, .25], 25], [[.5, .5, 0], 25]]
+share_LT = [[[1], 25], [[.75, .125, .125], 25], [[.5, .25, .25], 25], [[.25, .375, .375], 25], [[.5, .5], 50],[[1], 50], [[.125, .75, .125], 25], [[.25, .5, .25], 25], [[.375, .25, .375], 25], [[.5, 0, .5], 25], [[1], 75], [[.125, .125, .75], 25], [[.25, .25, .5], 25], [[.375, .375, .25], 25], [[.5, .5, 0], 25]]
 
-schemaNAME = ['100000000', '075125125', '050025025', '025375375', '000050050', '000100000', '125075125', '025050025',
-              '375025375', '050000050', '000000100', '125125075', '025025050', '375375025', '050050000']
+schemaNAME = ['100000000', '075125125', '050025025', '025375375', '000050050', '000100000', '125075125', '025050025', '375025375', '050000050', '000000100', '125125075', '025025050', '375375025', '050050000']
 
 fac = 25
 
@@ -135,16 +134,13 @@ for x in range(share_LT):
 
         os.environ['PGPASSWORD'] = '???'
 
-        cmds = 'raster2pgsql -s 25832 -I -C -M "' + dst_filename + '" -F stream_network_' + str(
-            schemaNAME[x]) + '.nlmr_testarea_50x50_' + str(xx) + ' | psql -d ??? -h ??? -U ??? '
+        cmds = 'raster2pgsql -s 25832 -I -C -M "' + dst_filename + '" -F stream_network_' + str(schemaNAME[x]) + '.nlmr_testarea_50x50_' + str(xx) + ' | psql -d ??? -h ??? -U ??? '
         subprocess.call(cmds, shell=True)
 
-        cmds = 'gdalwarp -tr 100 100 -r average "' + dst_filename + '" "' + dst_filename[
-                                                                            :-5] + '_resamp.tif" -overwrite'
+        cmds = 'gdalwarp -tr 100 100 -r average "' + dst_filename + '" "' + dst_filename[:-5] + '_resamp.tif" -overwrite'
         subprocess.call(cmds, shell=True)
 
-        cmds = 'raster2pgsql -s 25832 -I -C -M "' + dst_filename[:-5] + '_resamp.tif" -F stream_network_' + str(
-            schemaNAME[x]) + '.nlmr_testarea_50x50_' + str(xx) + '_resamp | psql -d ??? -h ??? -U ??? '
+        cmds = 'raster2pgsql -s 25832 -I -C -M "' + dst_filename[:-5] + '_resamp.tif" -F stream_network_' + str(schemaNAME[x]) + '.nlmr_testarea_50x50_' + str(xx) + '_resamp | psql -d ??? -h ??? -U ??? '
         subprocess.call(cmds, shell=True)
 
         #####
@@ -193,16 +189,13 @@ for x in range(share_LT):
 
         os.environ['PGPASSWORD'] = '???'
 
-        cmds = 'raster2pgsql -s 25832 -I -C -M "' + dst_filename + '" -F stream_network_' + str(
-            schemaNAME[x]) + '.nlmrc_testarea_50x50_' + str(xx) + ' | psql -d ??? -h ??? -U ??? '
+        cmds = 'raster2pgsql -s 25832 -I -C -M "' + dst_filename + '" -F stream_network_' + str(schemaNAME[x]) + '.nlmrc_testarea_50x50_' + str(xx) + ' | psql -d ??? -h ??? -U ??? '
         subprocess.call(cmds, shell=True)
 
-        cmds = 'gdalwarp -tr 100 100 -r average "' + dst_filename + '" "' + dst_filename[
-                                                                            :-5] + '_resamp.tif" -overwrite'
+        cmds = 'gdalwarp -tr 100 100 -r average "' + dst_filename + '" "' + dst_filename[:-5] + '_resamp.tif" -overwrite'
         subprocess.call(cmds, shell=True)
 
-        cmds = 'raster2pgsql -s 25832 -I -C -M "' + dst_filename[:-5] + '_resamp.tif" -F stream_network_' + str(
-            schemaNAME[x]) + '.nlmrc_testarea_50x50_' + str(xx) + '_resamp | psql -d ??? -h ??? -U ??? '
+        cmds = 'raster2pgsql -s 25832 -I -C -M "' + dst_filename[:-5] + '_resamp.tif" -F stream_network_' + str(schemaNAME[x]) + '.nlmrc_testarea_50x50_' + str(xx) + '_resamp | psql -d ??? -h ??? -U ??? '
         subprocess.call(cmds, shell=True)
 
         #####
@@ -213,8 +206,7 @@ for x in range(share_LT):
 
         dataset = []
 
-        dataset = driver.Create(
-            dst_filename,
+        dataset = driver.Create(dst_filename,
             int(nCOL),
             int(nROW),
             1,
@@ -251,16 +243,13 @@ for x in range(share_LT):
 
         os.environ['PGPASSWORD'] = '???'
 
-        cmds = 'raster2pgsql -s 25832 -I -C -M "' + dst_filename + '" -F stream_network_' + str(
-            schemaNAME[x]) + '.nlmre_testarea_50x50_' + str(xx) + ' | psql -d ??? -h ??? -U ??? '
+        cmds = 'raster2pgsql -s 25832 -I -C -M "' + dst_filename + '" -F stream_network_' + str(schemaNAME[x]) + '.nlmre_testarea_50x50_' + str(xx) + ' | psql -d ??? -h ??? -U ??? '
         subprocess.call(cmds, shell=True)
 
-        cmds = 'gdalwarp -tr 100 100 -r average "' + dst_filename + '" "' + dst_filename[
-                                                                            :-5] + '_resamp.tif" -overwrite'
+        cmds = 'gdalwarp -tr 100 100 -r average "' + dst_filename + '" "' + dst_filename[:-5] + '_resamp.tif" -overwrite'
         subprocess.call(cmds, shell=True)
 
-        cmds = 'raster2pgsql -s 25832 -I -C -M "' + dst_filename[:-5] + '_resamp.tif" -F stream_network_' + str(
-            schemaNAME[x]) + '.nlmre_testarea_50x50_' + str(xx) + '_resamp | psql -d ??? -h ??? -U ??? '
+        cmds = 'raster2pgsql -s 25832 -I -C -M "' + dst_filename[:-5] + '_resamp.tif" -F stream_network_' + str(schemaNAME[x]) + '.nlmre_testarea_50x50_' + str(xx) + '_resamp | psql -d ??? -h ??? -U ??? '
         subprocess.call(cmds, shell=True)
 
 #####
@@ -284,42 +273,27 @@ for x in ids:
     ext = [float(i) for i in ext]
 
     for xx in range(10):
-        cursor.execute("""CREATE TABLE stream_network_625125025.nlmr_testarea_50x50_""" + str(xx) + """_""" + str(
-            x) + """ AS SELECT ST_Clip(rast, (ST_SetSRID(ST_MakeEnvelope(""" + str(ext)[
-                                                                               1:-1] + """), 25832))) AS rast FROM stream_network_625125025.nlmr_testarea_50x50_""" + str(
-            xx) + """_resamp;""")
+        cursor.execute("""CREATE TABLE stream_network_625125025.nlmr_testarea_50x50_""" + str(xx) + """_""" + str(x) + """ AS SELECT ST_Clip(rast, (ST_SetSRID(ST_MakeEnvelope(""" + str(ext)[1:-1] + """), 25832))) AS rast FROM stream_network_625125025.nlmr_testarea_50x50_""" + str(xx) + """_resamp;""")
 
-        cursor.execute("""SELECT addrasterconstraints('stream_network_625125025'::name, 'nlmr_testarea_50x50_""" + str(
-            xx) + """_""" + str(x) + """'::name, 'rast'::name,'regular_blocking', 'blocksize');""")
+        cursor.execute("""SELECT addrasterconstraints('stream_network_625125025'::name, 'nlmr_testarea_50x50_""" + str(xx) + """_""" + str(x) + """'::name, 'rast'::name,'regular_blocking', 'blocksize');""")
 
-        cursor.execute("""UPDATE stream_network_625125025.nlmr_testarea_50x50_""" + str(xx) + """_""" + str(
-            x) + """ SET rast = ST_SetSRID(rast,25832);""")
+        cursor.execute("""UPDATE stream_network_625125025.nlmr_testarea_50x50_""" + str(xx) + """_""" + str(x) + """ SET rast = ST_SetSRID(rast,25832);""")
 
         ###
 
-        cursor.execute("""CREATE TABLE stream_network_625125025.nlmrc_testarea_50x50_""" + str(xx) + """_""" + str(
-            x) + """ AS SELECT ST_Clip(rast, (ST_SetSRID(ST_MakeEnvelope(""" + str(ext)[
-                                                                               1:-1] + """), 25832))) AS rast FROM stream_network_625125025.nlmrc_testarea_50x50_""" + str(
-            xx) + """_resamp;""")
+        cursor.execute("""CREATE TABLE stream_network_625125025.nlmrc_testarea_50x50_""" + str(xx) + """_""" + str(x) + """ AS SELECT ST_Clip(rast, (ST_SetSRID(ST_MakeEnvelope(""" + str(ext)[1:-1] + """), 25832))) AS rast FROM stream_network_625125025.nlmrc_testarea_50x50_""" + str(xx) + """_resamp;""")
 
-        cursor.execute("""SELECT AddRasterConstraints('stream_network_625125025'::name, 'nlmrc_testarea_50x50_""" + str(
-            xx) + """_""" + str(x) + """'::name, 'rast'::name,'regular_blocking', 'blocksize');""")
+        cursor.execute("""SELECT AddRasterConstraints('stream_network_625125025'::name, 'nlmrc_testarea_50x50_""" + str(xx) + """_""" + str(x) + """'::name, 'rast'::name,'regular_blocking', 'blocksize');""")
 
-        cursor.execute("""UPDATE stream_network_625125025.nlmrc_testarea_50x50_""" + str(xx) + """_""" + str(
-            x) + """ SET rast = ST_SetSRID(rast,25832);""")
+        cursor.execute("""UPDATE stream_network_625125025.nlmrc_testarea_50x50_""" + str(xx) + """_""" + str(x) + """ SET rast = ST_SetSRID(rast,25832);""")
 
         ###
 
-        cursor.execute("""CREATE TABLE stream_network_625125025.nlmre_testarea_50x50_""" + str(xx) + """_""" + str(
-            x) + """ AS SELECT ST_Clip(rast, (ST_SetSRID(ST_MakeEnvelope(""" + str(ext)[
-                                                                               1:-1] + """), 25832))) AS rast FROM stream_network_625125025.nlmre_testarea_50x50_""" + str(
-            xx) + """_resamp;""")
+        cursor.execute("""CREATE TABLE stream_network_625125025.nlmre_testarea_50x50_""" + str(xx) + """_""" + str(x) + """ AS SELECT ST_Clip(rast, (ST_SetSRID(ST_MakeEnvelope(""" + str(ext)[1:-1] + """), 25832))) AS rast FROM stream_network_625125025.nlmre_testarea_50x50_""" + str(xx) + """_resamp;""")
 
-        cursor.execute("""SELECT AddRasterConstraints('stream_network_625125025'::name, 'nlmre_testarea_50x50_""" + str(
-            xx) + """_""" + str(x) + """'::name, 'rast'::name,'regular_blocking', 'blocksize');""")
+        cursor.execute("""SELECT AddRasterConstraints('stream_network_625125025'::name, 'nlmre_testarea_50x50_""" + str(xx) + """_""" + str(x) + """'::name, 'rast'::name,'regular_blocking', 'blocksize');""")
 
-        cursor.execute("""UPDATE stream_network_625125025.nlmre_testarea_50x50_""" + str(xx) + """_""" + str(
-            x) + """ SET rast = ST_SetSRID(rast,25832);""")
+        cursor.execute("""UPDATE stream_network_625125025.nlmre_testarea_50x50_""" + str(xx) + """_""" + str(x) + """ SET rast = ST_SetSRID(rast,25832);""")
 
 conn.commit()
 
