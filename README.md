@@ -34,9 +34,9 @@ To run the code following **PYTHON LIBRARIES** are further required:
 
 Following three geo-datasets are required as **INPUT-DATA**:
 
- - **stream_net.tif**:\ 
+ - **stream_net.tif**:
    Raster dataset (resolution 25m x 25m) representing a 50 * 50 km section of a stream network from South-West Germany 
- - **habitat_patches.shp**:\
+ - **habitat_patches.shp**:
    Point-Shapefile dataset representing centroids of potential habitat patches along the stream network with an interval of 100 meters.
  - **tiles_10x10km.shp**:
    Polygon-Shapefile dataset representing 25 coextensive squares covering the raster dataset. 
