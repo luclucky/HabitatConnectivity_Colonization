@@ -34,11 +34,11 @@ To run the code following **PYTHON LIBRARIES** are further required:
 
 Following three geo-datasets are required as **INPUT-DATA**:
 
- - **stream_net.tif**:
+ - **stream_net.tif**:\
    Raster dataset (resolution 25m x 25m) representing a 50 * 50 km section of a stream network from South-West Germany 
- - **habitat_patches.shp**:
+ - **habitat_patches.shp**:\
    Point-Shapefile dataset representing centroids of potential habitat patches along the stream network with an interval of 100 meters.
- - **tiles_10x10km.shp**:
+ - **tiles_10x10km.shp**:\
    Polygon-Shapefile dataset representing 25 coextensive squares covering the raster dataset. 
 
 The datasets are stored in the repository folder [geoDATA_gitHUB](https://github.com/luclucky/HabitatConnectivity_Colonization/tree/master/geoDATA_gitHUB) and have to be imported in a database-schema named **stream_network**. The schema has to be created and named accordingly in advance. For the import see e.g. [PostGIS 2.4.8dev Manual](https://postgis.net/stuff/postgis-2.4.pdf) - 4.4.Loading GIS (Vector) Data & 5.1 Loading and Creating Rasters. 
