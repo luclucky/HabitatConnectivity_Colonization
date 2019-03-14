@@ -8,6 +8,8 @@ Lucas Streib¹, Henriette Heer¹, Mira Kattwinkel¹, Stefan Ruzika², Ralf B. Sc
 ¹ Institute for Environmental Sciences, University Koblenz-Landau, 76829 Landau i. d. Pfalz, Germany\
 ² Department of Mathematics, University of Kaiserslautern, 67653 Kaiserslautern, Germany
 
+-----
+
 ### A. FRAMEWORK
 
 The **SOFTWARE-FRAMEWORK** for the presented meta-population model consists of: 
@@ -55,7 +57,7 @@ Please run the scripts corresponding following order:
 **4. Habitat_Networks.py**\
 **5. Simulation.py**
 
-------
+-----
 
 For suggestions or requests for further information please contact the corresponding author **Lucas Streib**:
 
