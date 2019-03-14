@@ -10,6 +10,7 @@ conn = psycopg2.connect("host=??? port=??? dbname=??? user=??? password=???")
 cursor = conn.cursor()
 
 cursor.execute("""SELECT ids FROM stream_network.pts_habitat_red""")
+
 ids = cursor.fetchall()
 ids = [i[0] for i in ids]
 
@@ -27,6 +28,7 @@ conn = psycopg2.connect("host=??? port=??? dbname=??? user=??? password=???")
 cursor = conn.cursor()
 
 cursor.execute("""SELECT ids FROM stream_network.rast_10x10""")
+
 ids = cursor.fetchall()
 ids = [i[0] for i in ids]
 
