@@ -46,7 +46,7 @@ The datasets are stored in the repository folder [geoDATA](https://github.com/lu
 ### C. PYTHON CODE
 
 For database access from Python first, the connection parameters have to be specified in of the scripts stored in the repository folder [pythonCODE](https://github.com/luclucky/HabitatConnectivity_Colonization/tree/master/pythonCODE). Therefore, replace **???**-symbols in the command **psycopg2.connect("host=??? port=??? dbname=??? user=??? password=???")** found in each script according to the [psycopg manual](http://initd.org/psycopg/docs/module.html).
-The individual code is commented regarding specific implementation details, variable declarations, data storage etc..\ 
+The individual code is commented regarding specific implementation details, variable declarations, data storage etc..
 Please run the scripts corresponding following order:
 
 **1. Landscape_Scenarios.py**\
@@ -57,11 +57,10 @@ Please run the scripts corresponding following order:
 
 ------
 
-For suggestions or requests for further information please contact the corresponding author **Lucas Streib**:\
+For suggestions or requests for further information please contact the corresponding author **Lucas Streib**:
 
 &#9993; streib@uni-landau.de\
 &#9990; +49 6341 280-32317\
-
 Institute for Enviornmental Sciences\
 Quantitative Landscape Ecology\
 University of Koblenz-Landau, Campus Landau\
