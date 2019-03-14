@@ -43,11 +43,11 @@ Following three geo-datasets are required as **INPUT-DATA**:
  - **tiles_10x10km.shp**:\
    Polygon-Shapefile dataset representing 25 coextensive squares covering the raster dataset. 
 
-The datasets are stored in the repository folder [geoDATA](https://github.com/luclucky/HabitatConnectivity_Colonization/tree/master/geoDATA_gitHUB) and have initially be imported into the database-schema **stream_network**; the schema has to be [created and named](https://www.postgresql.org/docs/9.3/sql-createschema.html) accordingly in advance. For the import into the database see e.g. [PostGIS 2.4.8dev Manual](https://postgis.net/stuff/postgis-2.4.pdf) - 4.4.Loading GIS (Vector) Data & 5.1 Loading and Creating Rasters. 
+The datasets are stored in the repository folder [geoDATA](https://github.com/luclucky/HabitatConnectivity_Colonization/tree/master/geoDATA_gitHUB) and initially have to be imported into the database-schema **stream_network**; the schema has to be [created and named](https://www.postgresql.org/docs/9.3/sql-createschema.html) accordingly in advance. For the import into the database see e.g. [PostGIS 2.4.8dev Manual](https://postgis.net/stuff/postgis-2.4.pdf) - 4.4.Loading GIS (Vector) Data & 5.1 Loading and Creating Rasters. 
 
 ### C. PYTHON CODE
 
-For database access from Python first, the connection parameters have to be specified in of the scripts stored in the repository folder [pythonCODE](https://github.com/luclucky/HabitatConnectivity_Colonization/tree/master/pythonCODE). Therefore, replace **???**-symbols in the command **psycopg2.connect("host=??? port=??? dbname=??? user=??? password=???")** found in each script according to the [psycopg manual](http://initd.org/psycopg/docs/module.html).
+For database access from Python first, the connection parameters have to be specified in each script stored in the repository folder [pythonCODE](https://github.com/luclucky/HabitatConnectivity_Colonization/tree/master/pythonCODE). Therefore, replace **???**-symbols in the command **psycopg2.connect("host=??? port=??? dbname=??? user=??? password=???")** found in each script according to the [psycopg manual](http://initd.org/psycopg/docs/module.html).
 The individual code is commented regarding specific implementation details, variable declarations, data storage etc..
 Please run the scripts corresponding following order:
 
