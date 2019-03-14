@@ -18,7 +18,7 @@ The **SOFTWARE-FRAMEWORK** for the presented meta-population model consists of:
 - [PostGIS 2.3.3](https://postgis.net/2017/07/01/postgis-2.3.3/)
 - [Python 2.7.12](https://www.python.org/downloads/release/python-2712/)
 
-All results produced by the **PYTHON CODE** (see C.) will be stored in a [PostgreSQL](https://www.postgresql.org/) database extended by [PostGIS](https://postgis.net/). The set-up of landscape scenarios, habitat networks and the simulation is implemented in **PYTHON** using the PostgreSQL database adapter [Psycopg](http://initd.org/psycopg/docs/index.html).\
+All results produced by the **PYTHON CODE** (see **C.**) will be stored in a [PostgreSQL](https://www.postgresql.org/) database extended by [PostGIS](https://postgis.net/). The set-up of landscape scenarios, habitat networks and the simulation is implemented in **PYTHON** using the PostgreSQL database adapter [Psycopg](http://initd.org/psycopg/docs/index.html).\
 To run the code following **PYTHON LIBRARIES** are further required: 
 
 - [gdal 2.2.1](https://pypi.org/project/pygdal/)
