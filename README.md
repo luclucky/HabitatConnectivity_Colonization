@@ -47,7 +47,7 @@ The datasets are stored in the repository folder [geoDATA](https://github.com/lu
 
 ### C. PYTHON CODE
 
-For database access from Python, first the connection parameters have to be specified in each script stored in the repository folder [pythonCODE](https://github.com/luclucky/HabitatConnectivity_Colonization/tree/master/pythonCODE). Therefore, replace **???**-symbols in the command **psycopg2.connect("host=??? port=??? dbname=??? user=??? password=???")** found in each script according to the [psycopg manual](http://initd.org/psycopg/docs/module.html).
+For database access from Python, first the connection parameters have to be specified in each script stored in the repository folder [pythonCODE](https://github.com/luclucky/HabitatConnectivity_Colonization/tree/master/pythonCODE). Therefore, replace **???** in the command **psycopg2.connect("host=??? port=??? dbname=??? user=??? password=???")** found in each script according to the [psycopg manual](http://initd.org/psycopg/docs/module.html).
 The individual code is commented regarding specific implementation details, variable declarations, data storage etc..
 Please run the scripts in the following order:
 
