@@ -63,7 +63,7 @@ For suggestions or requests for further information please contact the correspon
 
 &#9993; streib@uni-landau.de\
 &#9990; +49 6341 280-32317\
-Institute for Enviornmental Sciences\
+iES - Institute for Enviornmental Sciences\
 Quantitative Landscape Ecology\
 University of Koblenz-Landau, Campus Landau\
 Fortstraße 7\
