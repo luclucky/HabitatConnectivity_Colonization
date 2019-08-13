@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/HabitatConnectivity.iml" filepath="$PROJECT_DIR$/.idea/HabitatConnectivity.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../Stress_LandscapeDroughts/.idea/Stress_LandscapeDroughts.iml" filepath="$PROJECT_DIR$/../Stress_LandscapeDroughts/.idea/Stress_LandscapeDroughts.iml" />
     </modules>
   </component>
 </project>

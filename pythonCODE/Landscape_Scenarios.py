@@ -27,7 +27,7 @@ cursor.execute("""SELECT ST_MetaData(rast) As md FROM stream_network.rlp_stream_
 raster_MD = cursor.fetchall()
 raster_MD = [float(xx) for xx in raster_MD[0][0][1:-1].split(',')]
 
-# ???
+# Query Dimensions of Raster-Matrix & Cell-Size
 
 nCOL = raster_MD[2]
 nROW = raster_MD[3]
@@ -63,25 +63,21 @@ gdal.Unlink(vsipath)
 cursor.close()
 conn.close()
 
-### Variables
+### Variables definition
 
-# ???
+# Number of NLMs produced
 
 numNLMs = 10
 
-# ???
+# Shares of Landscape-Types 1-3
 
 share_LT = [[[1], 25], [[.75, .125, .125], 25], [[.5, .25, .25], 25], [[.25, .375, .375], 25], [[.5, .5], 50],[[1], 50], [[.125, .75, .125], 25], [[.25, .5, .25], 25], [[.375, .25, .375], 25], [[.5, 0, .5], 25], [[1], 75], [[.125, .125, .75], 25], [[.25, .25, .5], 25], [[.375, .375, .25], 25], [[.5, .5, 0], 25]]
 
-# ???
+# Naming Schema
 
 schemaNAME = ['100000000', '075125125', '050025025', '025375375', '000050050', '000100000', '125075125', '025050025', '375025375', '050000050', '000000100', '125125075', '025025050', '375375025', '050050000']
 
-# ???
-
-fac = 25
-
-# ???
+# OpenGIS Well Known Text description of coordinate system used
 
 wkt_projection = 'PROJCS["ETRS89 / UTM zone 32N",GEOGCS["ETRS89",DATUM["European_Terrestrial_Reference_System_1989",SPHEROID["GRS 1980",6378137,298.257222101,AUTHORITY["EPSG","7019"]],AUTHORITY["EPSG","6258"]],PRIMEM["Greenwich",0,AUTHORITY["EPSG","8901"]],UNIT["degree",0.01745329251994328,AUTHORITY["EPSG","9122"]],AUTHORITY["EPSG","4258"]],UNIT["metre",1,AUTHORITY["EPSG","9001"]],PROJECTION["Transverse_Mercator"],PARAMETER["latitude_of_origin",0],PARAMETER["central_meridian",9],PARAMETER["scale_factor",0.9996],PARAMETER["false_easting",500000],PARAMETER["false_northing",0],AUTHORITY["EPSG","25832"],AXIS["Easting",EAST],AXIS["Northing",NORTH]]'
 
@@ -92,19 +88,19 @@ for x in range(share_LT):
 
     for xx in range(numNLMs):
 
-        ### NLMs
+        ### NLMs see https://besjournals.onlinelibrary.wiley.com/action/downloadSupplement?doi=10.1111%2F2041-210X.12308&file=mee312308-sup-0001-dataS1.pdf
 
-        # random
+        # random NLM
 
         nlm_R = nlmpy.random(int(nROW), int(nCOL))
         nlm_R = ((nlmpy.classifyArray(nlm_R, share_LT[x][0]) + 1) * 25) + share_LT[x][1]
 
-        # random element
+        # random element NLM
 
-        nlm_RE = nlmpy.randomElementNN(int(nROW), int(nCOL), 1000 * fac)
+        nlm_RE = nlmpy.randomElementNN(int(nROW), int(nCOL), 1000 * 25)
         nlm_RE = ((nlmpy.classifyArray(nlm_RE, share_LT[x][0]) + 1) * 25) + share_LT[x][1]
 
-        # random cluster
+        # random cluster NLM
 
         nlm_RC = nlmpy.randomClusterNN(int(nROW), int(nCOL), .3825, n='8-neighbourhood')
         nlm_RC = ((nlmpy.classifyArray(nlm_RC, share_LT[x][0]) + 1) * 25) + share_LT[x][1]
