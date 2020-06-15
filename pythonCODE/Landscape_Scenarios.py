@@ -65,7 +65,7 @@ conn.close()
 
 ### Variables definition
 
-# Number of NLMs produced
+# Number of rastres produced per NLM algorithm
 
 numNLMs = 10
 
