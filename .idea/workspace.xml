@@ -1,0 +1,461 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="a6b0fe5c-f03a-4ff0-bfee-dd8f8cdd566d" name="Default Changelist" comment="" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pythonCODE/Landscape_Scenarios.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1155">
+              <caret line="77" column="208" selection-start-line="77" selection-start-column="208" selection-end-line="77" selection-end-column="208" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pythonCODE/EuclideanDistance_Networks.py">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/pythonCODE/Patch_Arragments.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="300">
+              <caret line="28" selection-start-line="28" selection-end-line="28" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pythonCODE/Habitat_Networks.py">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pythonCODE/Simulation.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="3735">
+              <caret line="249" column="621" selection-start-line="249" selection-start-column="621" selection-end-line="249" selection-end-column="621" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../Stress_LandscapeDroughts/pythonCODE/derivation_HabitatQuality.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="195">
+              <caret line="43" column="21" lean-forward="true" selection-start-line="43" selection-start-column="21" selection-end-line="43" selection-end-column="21" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>theta</find>
+      <find>exponential</find>
+      <find>logGRO</find>
+      <find>igr</find>
+      <find>TH</find>
+      <find>m_max</find>
+      <find>s</find>
+      <find>i</find>
+      <find>xx</find>
+      <find>xxx</find>
+      <find>xxxx</find>
+      <find>dist_pts_2500_</find>
+      <find>x</find>
+      <find>xNEW</find>
+      <find>dataset</find>
+      <find>print</find>
+      <find>xxxxxxxNEW</find>
+      <find>re</find>
+      <find>rlp_stream_rast_testarea_50x50</find>
+      <find>dist_pts_2500</find>
+      <find>pts_habitat_red</find>
+      <find>psycopg2.connect(&quot;host=??? port=??? dbname=??? user=??? password=???&quot;)</find>
+      <find>psycopg2.connect(&quot;host=localhost port=??? dbname=??? user=??? password=???&quot;)</find>
+      <find>psycopg2.connect</find>
+      <find>results</find>
+      <find>&quot;&quot;&quot;+str(inPARA[2])+&quot;&quot;&quot;.&quot;&quot;&quot;+str(inPARA[0])+&quot;&quot;&quot;_50x50_&quot;&quot;&quot;+str(xxx)+&quot;&quot;&quot;_&quot;&quot;&quot;+str(inHAB[16:])+&quot;&quot;&quot;_start_&quot;&quot;&quot;+str(xx)+&quot;&quot;&quot;</find>
+      <find>_timestep_arr</find>
+      <find>_timestep</find>
+      <find>fac</find>
+    </findStrings>
+    <replaceStrings>
+      <replace>'</replace>
+      <replace>patcSHAR</replace>
+      <replace>&quot;&quot;&quot;+str(SHR)+&quot;&quot;&quot;</replace>
+      <replace>_&quot;&quot;&quot;+str(SHR)+&quot;&quot;&quot;</replace>
+      <replace>toINS</replace>
+      <replace>xxZ</replace>
+      <replace>xxx</replace>
+      <replace>xxxNEW</replace>
+      <replace>xxxxNEW</replace>
+      <replace>xxxxxNEW</replace>
+      <replace>xxxxxxNEW</replace>
+      <replace>xNEW</replace>
+      <replace>y</replace>
+      <replace>xxNEW</replace>
+      <replace>xx</replace>
+      <replace>x</replace>
+      <replace>xxxxxx</replace>
+      <replace>habitat_patches</replace>
+      <replace>stream_net</replace>
+      <replace>xxxxxxx</replace>
+    </replaceStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="PREVIOUS_COMMIT_AUTHORS">
+      <list>
+        <option value="Lucas STreib" />
+        <option value="Lucas Streib" />
+      </list>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="SIGN_OFF_COMMIT" value="true" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/EuclideanDistance_Network.py" />
+        <option value="$PROJECT_DIR$/Habitat_Networks.py" />
+        <option value="$PROJECT_DIR$/Simulation.py" />
+        <option value="$PROJECT_DIR$/EuclideanDistance_Networks.py" />
+        <option value="$PROJECT_DIR$/Landscape_Scenarios.py" />
+        <option value="$PROJECT_DIR$/Patch_Arragments.py" />
+        <option value="$PROJECT_DIR$/pythonCODE/Simulation.py" />
+        <option value="$PROJECT_DIR$/pythonCODE/Landscape_Scenarios.py" />
+        <option value="$PROJECT_DIR$/../Stress_LandscapeDroughts/derivation_HabitatQuality.py" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="1037" />
+    <option name="y" value="256" />
+    <option name="width" value="1368" />
+    <option name="height" value="768" />
+  </component>
+  <component name="ProjectLevelVcsManager">
+    <OptionsSetting value="false" id="Update" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="HabitatConnectivity" type="b2602c69:ProjectViewProjectNode" />
+              <item name="HabitatConnectivity" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="HabitatConnectivity" type="b2602c69:ProjectViewProjectNode" />
+              <item name="HabitatConnectivity" type="462c0819:PsiDirectoryNode" />
+              <item name="pythonCODE" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="HabitatConnectivity" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Stress_LandscapeDroughts" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="HabitatConnectivity" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Stress_LandscapeDroughts" type="462c0819:PsiDirectoryNode" />
+              <item name="pythonCODE" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Stress_LandscapeDroughts" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/../Stress_LandscapeDroughts/pythonCODE" />
+      <recent name="$PROJECT_DIR$/../Stress_LandscapeDroughts" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="a6b0fe5c-f03a-4ff0-bfee-dd8f8cdd566d" name="Default Changelist" comment="" />
+      <created>1551863882076</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1551863882076</updated>
+    </task>
+    <task id="LOCAL-00001" summary="Add files via upload">
+      <created>1551864793565</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1551864793565</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Add files via upload">
+      <created>1551865030297</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1551865030297</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Add files via upload">
+      <created>1551865410282</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1551865410282</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Add files via upload">
+      <created>1551868316960</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1551868316960</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Add files via upload">
+      <created>1551881251630</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1551881251630</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Add files via upload">
+      <created>1551881637092</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1551881637092</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Add files via upload">
+      <created>1551947861735</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1551947861735</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Add files via upload">
+      <created>1551949064769</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1551949064769</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Add files via upload">
+      <created>1551950010847</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1551950010847</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Files modified in PyCharm">
+      <created>1551953941189</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1551953941189</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Files modified in PyCharm">
+      <created>1552553058773</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1552553058773</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Files modified in PyCharm">
+      <created>1552555978421</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1552555978421</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Files modified in PyCharm">
+      <created>1552556432912</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1552556432912</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Files modified in PyCharm">
+      <created>1552556477238</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1552556477238</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Files modified in PyCharm">
+      <created>1552556599994</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1552556599994</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Files modified in PyCharm">
+      <created>1552558281917</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1552558281917</updated>
+    </task>
+    <task id="LOCAL-00017" summary="Files modified in PyCharm">
+      <created>1552567498255</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1552567498255</updated>
+    </task>
+    <task id="LOCAL-00018" summary="Files modified in PyCharm">
+      <created>1552656599987</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1552656599988</updated>
+    </task>
+    <task id="LOCAL-00019" summary="Files modified in PyCharm">
+      <created>1565686003246</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1565686003246</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
+    <servers />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="1367" y="0" width="1922" height="1053" extended-state="6" />
+    <layout>
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4992" visible="true" weight="0.2113127" />
+      <window_info id="Structure" order="1" sideWeight="0.5008" side_tool="true" weight="0.18569905" />
+      <window_info id="Favorites" order="2" sideWeight="0.5008" side_tool="true" weight="0.18569905" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4994664" weight="0.32939914" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.49893278" weight="0.32975295" />
+      <window_info anchor="bottom" id="Version Control" order="7" sideWeight="0.49786553" visible="true" weight="0.32975295" />
+      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.4941302" weight="0.32867885" />
+      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.50213444" side_tool="true" visible="true" weight="0.32975295" />
+      <window_info anchor="bottom" id="Python Console" order="10" sideWeight="0.7550694" weight="0.32975295" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="R Graphics" order="3" weight="0.32977587" />
+      <window_info anchor="right" id="R Packages" order="4" weight="0.32977587" />
+    </layout>
+  </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ORDER">
+      <list>
+        <option value="0" />
+        <option value="2" />
+        <option value="3" />
+        <option value="1" />
+      </list>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Add files via upload" />
+    <MESSAGE value="Files modified in PyCharm" />
+    <option name="LAST_COMMIT_MESSAGE" value="Files modified in PyCharm" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/createPTSnetwork.py" />
+    <entry file="file://$PROJECT_DIR$/EuclideanDistance_Network.py" />
+    <entry file="file://$PROJECT_DIR$/Landscape_Scenarios.py" />
+    <entry file="file://$PROJECT_DIR$/EuclideanDistance_Networks.py" />
+    <entry file="file://$PROJECT_DIR$/Patch_Arragments.py" />
+    <entry file="file://$PROJECT_DIR$/Habitat_Networks.py" />
+    <entry file="file://$PROJECT_DIR$/Simulation.py" />
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="-839" />
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pythonCODE/Landscape_Scenarios.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1155">
+          <caret line="77" column="208" selection-start-line="77" selection-start-column="208" selection-end-line="77" selection-end-column="208" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pythonCODE/EuclideanDistance_Networks.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pythonCODE/Habitat_Networks.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pythonCODE/Simulation.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3735">
+          <caret line="249" column="621" selection-start-line="249" selection-start-column="621" selection-end-line="249" selection-end-column="621" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../Stress_LandscapeDroughts/pythonCODE/__init__.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../Stress_LandscapeDroughts/pythonCODE/derivation_HabitatQuality.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="43" column="21" lean-forward="true" selection-start-line="43" selection-start-column="21" selection-end-line="43" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pythonCODE/Patch_Arragments.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="28" selection-start-line="28" selection-end-line="28" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>
