@@ -48,7 +48,7 @@ def costRASTER_shortPATHs(inSCHEMA):
             
             dist_pts_2500 = [list(y) for y in dist_pts_2500]
             
-            dist_pts_2500 = [[y[0],[float(y[1].split(' ',1)[0][6:]), float(y[1].split(' ',1)[1][:-1])],y[2],[float(x[3].split(' ',1)[0][6:]), float(y[3].split(' ',1)[1][:-1])], x[4]] for y in dist_pts_2500] 
+            dist_pts_2500 = [[y[0],[float(y[1].split(' ',1)[0][6:]), float(y[1].split(' ',1)[1][:-1])],y[2],[float(y[3].split(' ',1)[0][6:]), float(y[3].split(' ',1)[1][:-1])], y[4]] for y in dist_pts_2500]
             
             doub = [[y[2], y[0]]for y in dist_pts_2500],[[y[0], y[2]]for y in dist_pts_2500]
               

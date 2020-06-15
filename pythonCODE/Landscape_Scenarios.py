@@ -95,15 +95,21 @@ for x in range(share_LT):
         nlm_R = nlmpy.random(int(nROW), int(nCOL))
         nlm_R = ((nlmpy.classifyArray(nlm_R, share_LT[x][0]) + 1) * 25) + share_LT[x][1]
 
+        np.place(nlm_R, STREAM01_ARRAY == 1, 25)
+
         # random element NLM
 
         nlm_RE = nlmpy.randomElementNN(int(nROW), int(nCOL), 1000 * 25)
         nlm_RE = ((nlmpy.classifyArray(nlm_RE, share_LT[x][0]) + 1) * 25) + share_LT[x][1]
 
+        np.place(nlm_RE, STREAM01_ARRAY == 1, 25)
+
         # random cluster NLM
 
         nlm_RC = nlmpy.randomClusterNN(int(nROW), int(nCOL), .3825, n='8-neighbourhood')
         nlm_RC = ((nlmpy.classifyArray(nlm_RC, share_LT[x][0]) + 1) * 25) + share_LT[x][1]
+
+        np.place(nlm_RC, STREAM01_ARRAY == 1, 25)
 
         ###
 
@@ -279,37 +285,54 @@ cursor.execute("""SELECT ids FROM stream_network.rast_10x10""")
 ids = cursor.fetchall()
 ids = [i[0] for i in ids]
 
-for x in ids:
+for sN in schemaNAME:
 
-    print(x)
+    for x in ids:
 
-    cursor.execute("""SELECT ST_Extent(geom) FROM stream_network.rast_10x10 WHERE ids = """ + str(x) + """;""")
-    ext = cursor.fetchone()
-    ext = re.findall(r"[\w.]+", ext[0])[1:]
-    ext = [float(i) for i in ext]
+        print(x)
 
-    for xx in range(10):
-        cursor.execute("""CREATE TABLE stream_network_625125025.nlmr_testarea_50x50_""" + str(xx) + """_""" + str(x) + """ AS SELECT ST_Clip(rast, (ST_SetSRID(ST_MakeEnvelope(""" + str(ext)[1:-1] + """), 25832))) AS rast FROM stream_network_625125025.nlmr_testarea_50x50_""" + str(xx) + """_resamp;""")
+        cursor.execute("""SELECT ST_Extent(geom) FROM stream_network.rast_10x10 WHERE ids = """ + str(x) + """;""")
+        ext = cursor.fetchone()
+        ext = re.findall(r"[\w.]+", ext[0])[1:]
+        ext = [float(i) for i in ext]
 
-        cursor.execute("""SELECT addrasterconstraints('stream_network_625125025'::name, 'nlmr_testarea_50x50_""" + str(xx) + """_""" + str(x) + """'::name, 'rast'::name,'regular_blocking', 'blocksize');""")
+        for xx in range(10):
+            cursor.execute("""CREATE TABLE stream_network_"""+(sN)+""".nlmr_testarea_50x50_""" + str(xx) + """_""" + str(
+                x) + """ AS SELECT ST_Clip(rast, (ST_SetSRID(ST_MakeEnvelope(""" + str(ext)[
+                                                                                   1:-1] + """), 25832))) AS rast FROM stream_network_"""+(sN)+""".nlmr_testarea_50x50_""" + str(
+                xx) + """_resamp;""")
 
-        cursor.execute("""UPDATE stream_network_625125025.nlmr_testarea_50x50_""" + str(xx) + """_""" + str(x) + """ SET rast = ST_SetSRID(rast,25832);""")
+            cursor.execute("""SELECT addrasterconstraints('stream_network_"""+(sN)+"""'::name, 'nlmr_testarea_50x50_""" + str(
+                xx) + """_""" + str(x) + """'::name, 'rast'::name,'regular_blocking', 'blocksize');""")
 
-        ###
+            cursor.execute("""UPDATE stream_network_"""+(sN)+""".nlmr_testarea_50x50_""" + str(xx) + """_""" + str(
+                x) + """ SET rast = ST_SetSRID(rast,25832);""")
 
-        cursor.execute("""CREATE TABLE stream_network_625125025.nlmrc_testarea_50x50_""" + str(xx) + """_""" + str(x) + """ AS SELECT ST_Clip(rast, (ST_SetSRID(ST_MakeEnvelope(""" + str(ext)[1:-1] + """), 25832))) AS rast FROM stream_network_625125025.nlmrc_testarea_50x50_""" + str(xx) + """_resamp;""")
+            ###
 
-        cursor.execute("""SELECT AddRasterConstraints('stream_network_625125025'::name, 'nlmrc_testarea_50x50_""" + str(xx) + """_""" + str(x) + """'::name, 'rast'::name,'regular_blocking', 'blocksize');""")
+            cursor.execute("""CREATE TABLE stream_network_"""+(sN)+""".nlmrc_testarea_50x50_""" + str(xx) + """_""" + str(
+                x) + """ AS SELECT ST_Clip(rast, (ST_SetSRID(ST_MakeEnvelope(""" + str(ext)[
+                                                                                   1:-1] + """), 25832))) AS rast FROM stream_network_"""+(sN)+""".nlmrc_testarea_50x50_""" + str(
+                xx) + """_resamp;""")
 
-        cursor.execute("""UPDATE stream_network_625125025.nlmrc_testarea_50x50_""" + str(xx) + """_""" + str(x) + """ SET rast = ST_SetSRID(rast,25832);""")
+            cursor.execute("""SELECT AddRasterConstraints('stream_network_"""+(sN)+"""'::name, 'nlmrc_testarea_50x50_""" + str(
+                xx) + """_""" + str(x) + """'::name, 'rast'::name,'regular_blocking', 'blocksize');""")
 
-        ###
+            cursor.execute("""UPDATE stream_network_"""+(sN)+""".nlmrc_testarea_50x50_""" + str(xx) + """_""" + str(
+                x) + """ SET rast = ST_SetSRID(rast,25832);""")
 
-        cursor.execute("""CREATE TABLE stream_network_625125025.nlmre_testarea_50x50_""" + str(xx) + """_""" + str(x) + """ AS SELECT ST_Clip(rast, (ST_SetSRID(ST_MakeEnvelope(""" + str(ext)[1:-1] + """), 25832))) AS rast FROM stream_network_625125025.nlmre_testarea_50x50_""" + str(xx) + """_resamp;""")
+            ###
 
-        cursor.execute("""SELECT AddRasterConstraints('stream_network_625125025'::name, 'nlmre_testarea_50x50_""" + str(xx) + """_""" + str(x) + """'::name, 'rast'::name,'regular_blocking', 'blocksize');""")
+            cursor.execute("""CREATE TABLE stream_network_"""+(sN)+""".nlmre_testarea_50x50_""" + str(xx) + """_""" + str(
+                x) + """ AS SELECT ST_Clip(rast, (ST_SetSRID(ST_MakeEnvelope(""" + str(ext)[
+                                                                                   1:-1] + """), 25832))) AS rast FROM stream_network_"""+(sN)+""".nlmre_testarea_50x50_""" + str(
+                xx) + """_resamp;""")
 
-        cursor.execute("""UPDATE stream_network_625125025.nlmre_testarea_50x50_""" + str(xx) + """_""" + str(x) + """ SET rast = ST_SetSRID(rast,25832);""")
+            cursor.execute("""SELECT AddRasterConstraints('stream_network_"""+(sN)+"""'::name, 'nlmre_testarea_50x50_""" + str(
+                xx) + """_""" + str(x) + """'::name, 'rast'::name,'regular_blocking', 'blocksize');""")
+
+            cursor.execute("""UPDATE stream_network_"""+(sN)+""".nlmre_testarea_50x50_""" + str(xx) + """_""" + str(
+                x) + """ SET rast = ST_SetSRID(rast,25832);""")
 
 conn.commit()
 
